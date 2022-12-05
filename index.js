@@ -59,6 +59,11 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
   app.use("/backend/blogs", blogRoute);
   app.use("/backend/pcs", pcRoute);
 
+  app.all('*', (req, res) => {
+    res.status(404).json({ message: '404 Not Found' })
+   
+})
+
   app.listen(process.env.PORT || 5000,()=>{
     // console.log(process.env.PORT)
     console.log("server is running")

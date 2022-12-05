@@ -12,8 +12,17 @@ app.use(cors())
 
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
-mongoose
-  .connect('mongodb://127.0.0.1:27017/', {
+// mongoose
+//   .connect('mongodb://127.0.0.1:27017/', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     // useCreateIndex: true,
+//     // useFindAndModify:true
+//   })
+//   .then(console.log("Connected to MongoDB"))
+//   .catch((err) => console.log(err));
+  mongoose
+  .connect('mongodb+srv://esmaelmoh:esmaelmoh0132@cluster0.achszuu.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // useCreateIndex: true,

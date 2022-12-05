@@ -47,7 +47,8 @@ router.post("/login", async (req, res) => {
     //||(bcrypt.compare(req.body.password,"$2b$10$aIZJTX62cFmiiwzqdDfAFuRIwgmBLX8LnAkUa1mzbZhcDBAsNkOgy"))
     // !req.body.password && res.status(400).json("Wrong credentials!");
     try{
-      const validated = await (bcrypt.compare(req.body.password,"$2b$10$mfR78KlkhfoVVKV9g6IY7.iVpJ/jcuUokwTpcP194912mc8Lx.Tuu"))
+      // const validated = await (bcrypt.compare(req.body.password,admin.password))
+      const validated = await (bcrypt.compare(req.body.password,"$2b$10$ZAnTYiTsOImnZtBONLzF0.eXOutNshb9HACWsebkCadV4Sr2w7G/6"))
       
       console.log(validated)
       // !validated && res.status(400).json("Wrong credentials!");

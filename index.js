@@ -8,7 +8,10 @@ const path = require("path")
 const app = express();
 const multer = require("multer");
 require("dotenv").config()
-app.use(cors())
+app.use(cors(
+  { origin:["https://mern-pc-shopping.onrender.com/"]
+  }
+))
 
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));

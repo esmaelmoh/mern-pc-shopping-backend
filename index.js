@@ -8,12 +8,13 @@ const path = require("path")
 const app = express();
 const multer = require("multer");
 require("dotenv").config()
-app.use(cors(
+// app.use(cors(
   // { origin:["https://mern-pc-shopping.onrender.com","http://localhost:3001/"]
   // }
-))
+// ))
 // app.use(cors()) "http://localhost:3000/"
-
+const corsOptions = require('./config/corsOptions')
+app.use(cors(corsOptions))
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")));
 //edited
@@ -59,5 +60,6 @@ app.use("/images", express.static(path.join(__dirname, "/images")));
   app.use("/backend/pcs", pcRoute);
 
   app.listen(process.env.PORT || 5000,()=>{
+    // console.log(process.env.PORT)
     console.log("server is running")
   })

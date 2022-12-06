@@ -11,6 +11,7 @@ require("dotenv").config()
 // app.use(cors(
   // { origin:["https://mern-pc-shopping.onrender.com","http://localhost:3001/"]
   // }
+  
 // ))
 // app.use(cors()) "http://localhost:3000/"
 const corsOptions = require('./config/corsOptions')

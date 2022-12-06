@@ -16,6 +16,7 @@ require("dotenv").config()
 const corsOptions = require('./config/corsOptions')
 app.use(cors(corsOptions))
 app.use(express.json());
+console.log(__dirname)
 app.use("/images", express.static(path.join(__dirname, "/images")));
 //edited
 // mongoose
